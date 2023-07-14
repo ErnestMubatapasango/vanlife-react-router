@@ -3,13 +3,14 @@ import React from 'react'
 import Header from './Header'
 import { Outlet } from 'react-router-dom'
 
+
 function Layout() {
   return (
-    <div className='mx-40'>    
+    <div className='mx-40 '>    
         <Header />
-        <main>
+        <main className='my-20'>
             <Outlet />
-        </main>        
+        </main>     
     </div>
   )
 }

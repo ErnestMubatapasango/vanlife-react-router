@@ -1,20 +1,30 @@
 import React from 'react'
 import Layout from './components/Layout'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
-import Host from './pages/Host'
-import Vans from './pages/Vans'
+import Vans, {loader as vanLoader} from './pages/Vans/Vans'
 import About from './pages/About'
 import Login from './pages/Login'
-
+import Dashboard from './pages/Host/Dashboard'
+import HostVans from './pages/Host/HostVans'
+import Income from './pages/Host/Income'
+import Reviews from './pages/Host/Reviews'
+import HostLayout from './components/HostLayout'
 
 function App() {
 
   const createRouter = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Layout />}>
-      <Route path='host' element={<Host />} />
       <Route path='about' element={<About />} />
-      <Route path='vans' element={<Vans />} />
+      <Route path='vans' loader={vanLoader} element={<Vans />} />
       <Route path='login' element={<Login />} />
+
+      <Route path='host' element={<HostLayout />} >
+        <Route index element={<Dashboard />}/>
+        <Route path='income' element={<Income />}/>
+        <Route path='vans' element={<HostVans />}/>
+        <Route path='reviews' element={<Reviews />}/>
+      </Route>
+      
     </Route>
   ))
   return (
