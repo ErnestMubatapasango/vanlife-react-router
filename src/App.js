@@ -14,12 +14,14 @@ import HostVanDetail, {loader as hostVanDetailLoader} from './pages/Host/HostVan
 import HostVanInfo, {loader as hostvanInfoLoader} from './pages/Host/HostVanInfo'
 import HostVanPricing, {loader as hostVanPriceLoader} from './pages/Host/HostVanPricing'
 import HostVanPhotos, {loader as hostVanPhotoLoader} from './pages/Host/HostVanPhotos'
+import NotFound from './components/NotFound'
 
 
 function App() {
 
   const createRouter = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Layout />}>
+      
       <Route path='about' element={<About />} />
       <Route path='vans' loader={vanLoader} element={<Vans />} />
       <Route path='vans/:id' loader={VanDetailLoader} element={<VanDetail />} />
@@ -38,7 +40,7 @@ function App() {
 
         <Route path='reviews' element={<Reviews />}/>
       </Route>
-      
+      <Route path='*' element={<NotFound />} />
     </Route>
   ))
   return (

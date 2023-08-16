@@ -10,7 +10,9 @@ function VanDetail() {
   const van = useLoaderData()
   const location = useLocation()
   //console.log(location)
+  //optional chaining - is the concept we are using here to check if the location.state is a thing
   const type = location.state?.search || ""
+  //const filterValue = location.state?.type || "all"
 
   function filterValue(){
     let typeFilterValue;
