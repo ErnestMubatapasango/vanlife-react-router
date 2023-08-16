@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink, useLoaderData} from 'react-router-dom'
+import { Link, NavLink, Outlet, useLoaderData} from 'react-router-dom'
 import { getVan } from '../../api'
 
 export function loader({params}){
@@ -24,11 +24,15 @@ function HostVanDetail() {
             </div>
         </div>
 
-        <div className='flex gap-8'>
-            <NavLink className={`text-xl font-medium text-slate-500 hover:text-black`} to='details'>Details</NavLink>
-            <NavLink className={`text-xl font-medium text-slate-500 hover:text-black`} to='pricing'>Pricing</NavLink>
-            <NavLink className={`text-xl font-medium text-slate-500 hover:text-black`} to='photos'>Photos</NavLink>
+        <div>
+            <nav className='flex gap-8'>
+                <NavLink className={`text-xl font-medium text-slate-500 hover:text-black`} to='.'>Details</NavLink>
+                <NavLink className={`text-xl font-medium text-slate-500 hover:text-black`} to='pricing'>Pricing</NavLink>
+                <NavLink className={`text-xl font-medium text-slate-500 hover:text-black`} to='photos'>Photos</NavLink>
+            </nav>
+            <Outlet />
         </div>
+        
 
     </div>
   )

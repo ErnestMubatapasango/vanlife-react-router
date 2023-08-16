@@ -9,7 +9,7 @@ export function loader({params}){
 function VanDetail() {
   const van = useLoaderData()
   const location = useLocation()
-  console.log(location)
+  //console.log(location)
   const type = location.state?.search || ""
 
   function filterValue(){
