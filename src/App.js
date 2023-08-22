@@ -4,7 +4,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import Vans, {loader as vanLoader} from './pages/Vans/Vans'
 import VanDetail, {loader as VanDetailLoader} from './pages/Vans/VanDetail'
 import About from './pages/About'
-import Login from './pages/Login'
+import Login, { LoginLoader } from './pages/Login'
 import Dashboard from './pages/Host/Dashboard'
 import HostVans, {loader as hostVansLoader} from './pages/Host/HostVans'
 import Income from './pages/Host/Income'
@@ -16,7 +16,7 @@ import HostVanPricing, {loader as hostVanPriceLoader} from './pages/Host/HostVan
 import HostVanPhotos, {loader as hostVanPhotoLoader} from './pages/Host/HostVanPhotos'
 import NotFound from './components/NotFound'
 import Error from './components/Error'
-
+import { requireAuth } from './utils'
 
 function App() {
 
@@ -26,20 +26,60 @@ function App() {
       <Route path='about' element={<About />} />
       <Route path='vans' loader={vanLoader} errorElement={<Error />} element={<Vans />} />
       <Route path='vans/:id' loader={VanDetailLoader} errorElement={<Error />} element={<VanDetail />} />
-      <Route path='login' element={<Login />} />
+
+      <Route path='login' loader={LoginLoader} element={<Login />} />
 
       <Route path='host' element={<HostLayout />} >
-        <Route index element={<Dashboard />}/>
-        <Route path='income' element={<Income />}/>
-        <Route path='vans' loader={hostVansLoader} errorElement={<Error />} element={<HostVans />}/>
+        <Route 
+          index 
+          element={<Dashboard />}
+          loader= {async() => await requireAuth()}
+        />
+        <Route 
+          path='income'
+          element={<Income />}
+          loader= {async() => await requireAuth()}  
+        />
 
-        <Route path='vans/:id' loader={hostVanDetailLoader} errorElement={<Error />} element={<HostVanDetail />} >
-          <Route index loader={hostvanInfoLoader} errorElement={<Error />} element={<HostVanInfo />} />
-          <Route path='pricing' loader={hostVanPriceLoader} errorElement={<Error />} element={<HostVanPricing />} />
-          <Route path='photos' loader={hostVanPhotoLoader} errorElement={<Error />} element={<HostVanPhotos />} />
+        <Route 
+          path='vans' 
+          loader={hostVansLoader} 
+          errorElement={<Error />} 
+          element={<HostVans />}
+        />
+
+        <Route 
+          path='vans/:id' 
+          loader={hostVanDetailLoader} 
+          errorElement={<Error />} 
+          element={<HostVanDetail />} 
+        >
+          <Route 
+            index 
+            loader={hostvanInfoLoader} 
+            errorElement={<Error />} 
+            element={<HostVanInfo />} 
+          />
+          <Route 
+            path='pricing' 
+            loader={hostVanPriceLoader} 
+            errorElement={<Error />} 
+            element={<HostVanPricing />} 
+          />
+          <Route 
+            path='photos' 
+            loader={hostVanPhotoLoader} 
+            errorElement={<Error />} 
+            element={<HostVanPhotos />} 
+          />
         </Route>
 
-        <Route path='reviews' element={<Reviews />}/>
+        <Route 
+          path='reviews' 
+          element={<Reviews />}
+          loader= {async() => await requireAuth()}
+        />
+
       </Route>
       <Route path='*' element={<NotFound />} />
     </Route>
