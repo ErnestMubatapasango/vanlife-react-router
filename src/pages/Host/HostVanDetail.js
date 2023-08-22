@@ -9,7 +9,12 @@ export function loader({params}){
 function HostVanDetail() {
     const hostVan = useLoaderData()
    
-
+    const activeStyle = {
+        fontWeight: 'bold',
+        textDecoration: 'underline',
+        color: 'rgb(107 114 128)'
+      }
+      
   return (
     <div className='space-y-8 bg-amber-100 p-8 rounded-2xl cursor-pointer '>
         <Link to=".." relative='path' className='text-xl text-slate-500 underline font-medium'> &larr; Back to all Vans</Link>
@@ -27,8 +32,8 @@ function HostVanDetail() {
         <div>
             <nav className='flex gap-8'>
                 <NavLink className={`text-xl font-medium text-slate-500 hover:text-black`} to='.'>Details</NavLink>
-                <NavLink className={`text-xl font-medium text-slate-500 hover:text-black`} to='pricing'>Pricing</NavLink>
-                <NavLink className={`text-xl font-medium text-slate-500 hover:text-black`} to='photos'>Photos</NavLink>
+                <NavLink style={({isActive}) => isActive ? activeStyle: null } className={`text-xl font-medium text-slate-500 hover:text-black`} to='pricing'>Pricing</NavLink>
+                <NavLink style={({isActive}) => isActive ? activeStyle: null } className={`text-xl font-medium text-slate-500 hover:text-black`} to='photos'>Photos</NavLink>
             </nav>
             <Outlet />
         </div>

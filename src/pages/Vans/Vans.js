@@ -47,7 +47,7 @@ function Vans() {
         {typeFilter && <Link to='.' className='underline text-slate-800 hover:bg-slate-300 font-medium'>Clear filters</Link> }
       </div>
 
-      <div className='flex flex-wrap gap-11 justify-between'>{vanElements}</div>
+      <div className=' pt-11 flex flex-wrap gap-x-8 gap-y-20 justify-center'>{vanElements}</div>
     </div>
   )
 }
