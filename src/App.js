@@ -15,6 +15,7 @@ import HostVanInfo, {loader as hostvanInfoLoader} from './pages/Host/HostVanInfo
 import HostVanPricing, {loader as hostVanPriceLoader} from './pages/Host/HostVanPricing'
 import HostVanPhotos, {loader as hostVanPhotoLoader} from './pages/Host/HostVanPhotos'
 import NotFound from './components/NotFound'
+import Error from './components/Error'
 
 
 function App() {
@@ -23,19 +24,19 @@ function App() {
     <Route path='/' element={<Layout />}>
       
       <Route path='about' element={<About />} />
-      <Route path='vans' loader={vanLoader} element={<Vans />} />
-      <Route path='vans/:id' loader={VanDetailLoader} element={<VanDetail />} />
+      <Route path='vans' loader={vanLoader} errorElement={<Error />} element={<Vans />} />
+      <Route path='vans/:id' loader={VanDetailLoader} errorElement={<Error />} element={<VanDetail />} />
       <Route path='login' element={<Login />} />
 
       <Route path='host' element={<HostLayout />} >
         <Route index element={<Dashboard />}/>
         <Route path='income' element={<Income />}/>
-        <Route path='vans' loader={hostVansLoader} element={<HostVans />}/>
+        <Route path='vans' loader={hostVansLoader} errorElement={<Error />} element={<HostVans />}/>
 
-        <Route path='vans/:id' loader={hostVanDetailLoader} element={<HostVanDetail />} >
-          <Route index loader={hostvanInfoLoader} element={<HostVanInfo />} />
-          <Route path='pricing' loader={hostVanPriceLoader} element={<HostVanPricing />} />
-          <Route path='photos' loader={hostVanPhotoLoader} element={<HostVanPhotos />} />
+        <Route path='vans/:id' loader={hostVanDetailLoader} errorElement={<Error />} element={<HostVanDetail />} >
+          <Route index loader={hostvanInfoLoader} errorElement={<Error />} element={<HostVanInfo />} />
+          <Route path='pricing' loader={hostVanPriceLoader} errorElement={<Error />} element={<HostVanPricing />} />
+          <Route path='photos' loader={hostVanPhotoLoader} errorElement={<Error />} element={<HostVanPhotos />} />
         </Route>
 
         <Route path='reviews' element={<Reviews />}/>
