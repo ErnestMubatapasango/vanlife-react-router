@@ -4,7 +4,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import Vans, {loader as vanLoader} from './pages/Vans/Vans'
 import VanDetail, {loader as VanDetailLoader} from './pages/Vans/VanDetail'
 import About from './pages/About'
-import Login, { LoginLoader } from './pages/Login'
+import Login, { LoginLoader, LoginAction } from './pages/Login'
 import Dashboard from './pages/Host/Dashboard'
 import HostVans, {loader as hostVansLoader} from './pages/Host/HostVans'
 import Income from './pages/Host/Income'
@@ -17,8 +17,8 @@ import HostVanPhotos, {loader as hostVanPhotoLoader} from './pages/Host/HostVanP
 import NotFound from './components/NotFound'
 import Error from './components/Error'
 import { requireAuth } from './utils'
-
-function App() {
+localStorage.removeItem("loggedIn")
+function App() {   
 
   const createRouter = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Layout />}>
@@ -27,7 +27,7 @@ function App() {
       <Route path='vans' loader={vanLoader} errorElement={<Error />} element={<Vans />} />
       <Route path='vans/:id' loader={VanDetailLoader} errorElement={<Error />} element={<VanDetail />} />
 
-      <Route path='login' loader={LoginLoader} element={<Login />} />
+      <Route path='login' loader={LoginLoader} action={LoginAction} element={<Login />} />
 
       <Route path='host' element={<HostLayout />} >
         <Route 
