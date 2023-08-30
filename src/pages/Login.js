@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, redirect, useActionData, useLoaderData, useNavigate } from 'react-router-dom'
+import { Form, redirect, useActionData, useLoaderData} from 'react-router-dom'
 
 async function fakeLoginUserCred({email, password}){
   if(email === "tawaz@gmail.com" && password === "tawaz123"){
@@ -18,13 +18,14 @@ export function LoginLoader({request}){
 }
 
 export async function LoginAction({request}){
+  const pathname = new URL(request.url).searchParams.get("redirectTo") || "/host"
   const formData = await request.formData()
   const email = formData.get("email")
   const password = formData.get("password")
   
   try{
-   const user = await fakeLoginUserCred({email, password})
-   return redirect("/host")
+    await fakeLoginUserCred({email, password})
+    return redirect(pathname)
   }
   catch(err){
     return err.message
@@ -35,7 +36,7 @@ export async function LoginAction({request}){
 function Login() {
 
   const message = useLoaderData()
-  const navigate = useNavigate()
+  //const navigate = useNavigate()
   const error = useActionData()
   // const [formData, setFormData] = React.useState({
   //   email: "",

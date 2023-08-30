@@ -3,8 +3,8 @@ import { getVan } from '../../api'
 import { useLoaderData } from 'react-router-dom'
 import { requireAuth } from '../../utils'
 
-export async function loader({params}){
-  await requireAuth()
+export async function loader({params, request}){
+  await requireAuth(request)
   return getVan(params.id)
 }
 function HostVanPricing() {

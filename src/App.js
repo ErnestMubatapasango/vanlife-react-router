@@ -18,6 +18,7 @@ import NotFound from './components/NotFound'
 import Error from './components/Error'
 import { requireAuth } from './utils'
 localStorage.removeItem("loggedIn")
+
 function App() {   
 
   const createRouter = createBrowserRouter(createRoutesFromElements(
@@ -33,12 +34,12 @@ function App() {
         <Route 
           index 
           element={<Dashboard />}
-          loader= {async() => await requireAuth()}
+          loader= {async({request}) => await requireAuth(request)}
         />
         <Route 
           path='income'
           element={<Income />}
-          loader= {async() => await requireAuth()}  
+          loader= {async({request}) => await requireAuth(request)}  
         />
 
         <Route 
@@ -77,7 +78,7 @@ function App() {
         <Route 
           path='reviews' 
           element={<Reviews />}
-          loader= {async() => await requireAuth()}
+          loader= {async({request}) => await requireAuth(request)}
         />
 
       </Route>
