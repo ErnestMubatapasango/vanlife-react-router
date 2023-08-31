@@ -36,7 +36,7 @@ function App() {
           element={<Dashboard />}
           loader= {async({request}) => await requireAuth(request)}
         />
-        <Route 
+        <Route  
           path='income'
           element={<Income />}
           loader= {async({request}) => await requireAuth(request)}  

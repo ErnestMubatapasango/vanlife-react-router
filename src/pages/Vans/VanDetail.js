@@ -1,9 +1,9 @@
 import React from 'react'
 import { getVan } from '../../api'
-import { Link, useLoaderData, useLocation } from 'react-router-dom'
+import { Link, useLoaderData, useLocation, defer, Await } from 'react-router-dom'
 
 export function loader({params}){
-  return getVan(params.id)
+  return defer({vanPromise:getVan(params.id)})
 }
 
 function VanDetail() {
@@ -30,17 +30,11 @@ function VanDetail() {
       return typeFilterValue = "all"
     }
   }
-  return (
-    <div className='space-y-8'>
-      <Link 
-        to={`..?${type}`}
-        relative='path'
-        className='text-xl underline text-slate-500'
-      >
-          &larr; Back to {filterValue()} vans
-      </Link>
+
+   function renderVanElements(van){
+    return(
       <div className='flex gap-11 items-center'>
-      
+        
       <img className='w-96 h-96 rounded-3xl' src={van.imageUrl} alt='van' />
       <div className='flex flex-col items-start gap-8'>
         <p className='px-3 py-2 bg-gray-500 text-slate-300 rounded-full font-semibold'>{van.type}</p>
@@ -52,9 +46,34 @@ function VanDetail() {
         >
           Rent this Van
         </button>
-      </div>
-     
+      </div>     
     </div>
+    )
+   }
+  return (
+    <div className='space-y-8'>
+      <Link 
+        to={`..?${type}`}
+        relative='path'
+        className='text-xl underline text-slate-500'
+      >
+          &larr; Back to {filterValue()} vans
+      </Link>
+
+      <React.Suspense fallback={
+        <div className="grid place-items-center pt-10">
+          <div 
+            className="animate-spin w-10 h-10 border-[3px] border-current border-t-transparent text-slate-600 rounded-full" 
+            role="status" 
+            aria-label="loading"
+            >          
+          </div>
+        </div>
+      }>
+        <Await resolve={van.vanPromise}>
+            {renderVanElements}
+        </Await>
+      </React.Suspense>
     </div>
    
   )
