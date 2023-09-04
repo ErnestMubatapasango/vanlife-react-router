@@ -8,6 +8,7 @@ import Login, { LoginLoader, LoginAction } from './pages/Login'
 import Dashboard from './pages/Host/Dashboard'
 import HostVans, {loader as hostVansLoader} from './pages/Host/HostVans'
 import Income from './pages/Host/Income'
+import Home from './pages/Home/Home'
 import Reviews from './pages/Host/Reviews'
 import HostLayout from './components/HostLayout'
 import HostVanDetail, {loader as hostVanDetailLoader} from './pages/Host/HostVanDetail'
@@ -23,7 +24,7 @@ function App() {
 
   const createRouter = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<Layout />}>
-      
+      <Route index element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='vans' loader={vanLoader} errorElement={<Error />} element={<Vans />} />
       <Route path='vans/:id' loader={VanDetailLoader} errorElement={<Error />} element={<VanDetail />} />
