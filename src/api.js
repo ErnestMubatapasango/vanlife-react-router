@@ -18,7 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const vansCollectionRef = collection(db, "vans")
-
+const reviewCollectionsRef = collection(db, "reviews")
 
 export async function getVans(){
     const querySnapShot = await getDocs(vansCollectionRef)
@@ -46,5 +46,15 @@ export async function getHostVans(){
         ...doc.data(),
         id: doc.id
     }))
+    return dataArray
+}
+
+export async function getReviewsData(){
+    const querySnapShot = await getDocs(reviewCollectionsRef)
+    const dataArray = querySnapShot.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+    }))
+
     return dataArray
 }

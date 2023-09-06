@@ -1,13 +1,19 @@
 import React from 'react'
 import Hero from "./Hero"
 import Inventory from './Inventory'
-import Vans from '../Vans/Vans'
+import Services from './Services'
+import Catalogue from './Catalogue'
+import Reviews from './Reviews'
+
+
 function Home() {
   return (
-    <div>
+    <div className='-space-y-10'>
         <Hero />
         <Inventory />
-       
+        <Services />
+        <Catalogue />
+        <Reviews />
     </div>
   )
 }

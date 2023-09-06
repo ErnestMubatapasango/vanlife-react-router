@@ -4,7 +4,7 @@ import CustomButton from '../../components/CustomButton'
 function Home() {
 
     function handleScroll(){
-
+        
     }
 
   return (

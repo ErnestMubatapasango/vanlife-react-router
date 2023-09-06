@@ -31,7 +31,7 @@ function Vans() {
         <Link key={van.id} to={van.id} state={{search: searchParams.toString()}}>
   
           <div  className='cursor-pointer space-y-2 flex flex-col items-start'>
-              <img className='w-80 h-[18rem] rounded-xl' src={van.imageUrl} alt='van' />
+              <img className='w-80 h-[18rem] rounded-xl object-contain' src={van.imageUrl} alt='van' />
               <h2 className='text-2xl font-medium'>{van.title}</h2>
               <h3 className='text-xl text-slate-600'>${van.price}/day</h3>
               <p className='px-3 py-1 bg-slate-400 rounded-xl'>{van.type}</p>
