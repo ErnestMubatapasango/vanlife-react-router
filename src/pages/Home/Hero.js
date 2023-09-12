@@ -10,7 +10,7 @@ function Home() {
   return (
     <div className='flex  items-start justify-between pt-20 '>
         <div className='space-y-5'>
-            <h1 className='text-[42px] leading-tight font-extrabold'>Find, Book, or <span className='text-amber-200'>Rent</span><br /> a car quickly and easily!<br /></h1>
+            <h1 className='text-[42px] leading-tight font-extrabold'>Find, Book, or <span className='text-amber-300'>Rent</span><br /> a car quickly and easily!<br /></h1>
 
             <h3 className='font-light'>
                 Streamline your car rental experience with our effortless<br/> Booking Process.Our user-friendly platform 
@@ -19,7 +19,7 @@ function Home() {
 
             <CustomButton
                 title="Explore Cars"
-                containerStyles="bg-amber-200 text-black rounded-full font-medium"
+                containerStyles="bg-amber-300 text-black rounded-full font-medium"
                 handleClick={handleScroll}
             />
         </div>
