@@ -57,7 +57,7 @@ function Login() {
   // }
   
   return (
-    <div className='flex flex-col justify-center items-center pt-10 bg-amber-100 mx-60 rounded-3xl'>
+    <div className='flex flex-col justify-center items-center pt-10 bg-amber-300 mx-60 rounded-3xl'>
         <h1 className='text-3xl'>Sign into your account</h1>
         {message && <h3 className='text-red-500 font-bold pt-2'>{message}</h3>}
         {error && <h3 className='text-red-500 font-bold pt-2'>{error}</h3>}
@@ -94,7 +94,7 @@ function Login() {
             name='password'
             className='p-2 rounded-xl w-[300px] indent-2 outline-none text-slate-500'
           />
-          <button className='bg-amber-400 p-2 rounded-2xl text-xl font-bold hover:bg-amber-200 text-slate-500'>Login</button>
+          <button className='bg-amber-200 p-2 rounded-2xl text-xl font-bold hover:bg-amber-400 text-slate-500'>Login</button>
         </Form>
     </div>
   )

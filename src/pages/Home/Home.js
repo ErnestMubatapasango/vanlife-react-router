@@ -4,7 +4,6 @@ import Inventory from './Inventory'
 import Services from './Services'
 import Catalogue from './Catalogue'
 import Reviews from './Reviews'
-import Footer from './Footer'
 
 
 function Home() {
@@ -15,7 +14,7 @@ function Home() {
         <Services />
         <Catalogue />
         <Reviews />
-        <Footer />
+
     </div>
   )
 }

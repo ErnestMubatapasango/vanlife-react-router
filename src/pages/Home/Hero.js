@@ -19,7 +19,7 @@ function Home() {
 
             <CustomButton
                 title="Explore Cars"
-                containerStyles="bg-amber-300 text-black rounded-full font-medium"
+                containerStyles="bg-amber-300 text-slate-500 rounded-full font-medium"
                 handleClick={handleScroll}
             />
         </div>

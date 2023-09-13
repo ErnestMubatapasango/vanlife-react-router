@@ -30,13 +30,13 @@ function Reviews() {
         slidesToShow: 1,
         slidesToScroll: 1,
         adaptiveHeight: true,
-        beforeChange: (current, next) => setCurrentSlide(next)
+        beforeChange: (currentSlide, next) => setCurrentSlide(next)
       };
 
-    const reviewElements = reviews.slice(0, currentSlide).map((review, index) => {
+    const reviewElements = reviews.slice(0, currentSlide).map(review => {
         return(
             
-                <div className='flex flex-row items-center gap-5 mx-40' key={index}>
+                <div className='flex flex-row items-center gap-5 mx-40' key={review.id}>
                     <img src={review.imageUrl} className='rounded-full border-4 border-amber-300 w-[15rem] h-[15rem] object-cover' alt='' />
                     <div className='text-left space-y-4'>
                         <span className='text-amber-300 text-3xl'><FaQuoteLeft /></span><p>{review.experience}</p><span className='text-amber-300 text-3xl flex justify-end items-end'><FaQuoteRight/></span>
@@ -57,14 +57,18 @@ function Reviews() {
         <h3 className='text-md text-amber-300 font-medium uppercase'>360+ Happy Clients</h3>
         <h1 className='text-4xl text-slate-400'>Our Clients Feedback</h1>
         <div className='pt-10'>
-            
-            <div className='flex flex-row relative'>
-                {reviewElements}
-            </div>
+          
+                <div className='flex flex-row'>
+                    {reviewElements}
+                </div>
+
+                {/* onClick={() => setCurrentSlide(currentSlide - 1)}
+                onClick={() => setCurrentSlide(currentSlide + 1)} */}
+           
                        
             <div className='flex items-center justify-center gap-8 pt-10'>
-                <button className='text-4xl text-slate-400 hover:text-amber-300' onClick={() => setCurrentSlide(currentSlide - 1)}><BsArrowLeftCircle /></button>
-                <button className='text-4xl text-slate-400 hover:text-amber-300' onClick={() => setCurrentSlide(currentSlide + 1)}><BsArrowRightCircle /></button>
+                <button className='text-4xl text-slate-400 hover:text-amber-300' ><BsArrowLeftCircle /></button>
+                <button className='text-4xl text-slate-400 hover:text-amber-300' ><BsArrowRightCircle /></button>
             </div>
         </div>    
     </div>
@@ -75,7 +79,7 @@ function Reviews() {
 
         <div className='space-x-2'>
             <input className='indent-2 w-60 p-2 rounded-full bg-white text-amber-200' type='email' placeholder='Enter your email here'  />
-            <button className='bg-white p-2 rounded-full  font-bold text-slate-400'>Subscribe</button>
+            <button className='bg-white p-2 rounded-full  font-medium text-slate-400'>Subscribe</button>
         </div>
     </div>
     </>
