@@ -7,9 +7,9 @@ import Footer from '../pages/Home/Footer'
 
 function Layout() {
   return (
-    <div className='mx-40 '>    
+    <div className='mx-10 md:mx-40 '>    
         <Header />
-        <main className='my-20'>
+        <main className=''>
             <Outlet />
         </main>  
         <Footer />   

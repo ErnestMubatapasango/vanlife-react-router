@@ -38,7 +38,7 @@ function Inventory() {
 
   return (
     
-      <Form className='flex flex-row justify-around shadow-2xl bg-amber-300 rounded-3xl p-5'>
+      <Form className='flex flex-row flex-wrap gap-5 md:gap-0 md:justify-around shadow-2xl bg-amber-300 rounded-3xl p-5'>
         <div className='flex flex-col gap-3 items-start justify-start'>
         <label className='font-medium text-slate-700  text-lg flex items-center' htmlFor='location'><ImLocation2 />Location:</label>
          <select className='bg-amber-200 text-slate-400 rounded-lg border-2 p-2 border-slate-400 outline-none'>

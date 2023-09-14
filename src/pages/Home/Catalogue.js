@@ -40,7 +40,7 @@ function Catalogue() {
     const carElements = displayedCars.slice(0, visibleCars).map(car => {
         return(
             <Link key={car.id}>
-                <div className='w-[15em] h-[20em] flex flex-col gap-2 items-start shadow-2xl px-2 py-4 rounded-2xl' >
+                <div className='w-[13em] h-[20em] flex flex-col gap-2 items-start shadow-2xl px-2 py-4 rounded-2xl' >
                     <img src={car.imageUrl} alt='rental cars' className='rounded-2xl w-[14rem] h-[10rem] object-contain' />
                     <h2 className='font-medium text-lg text-black'>{car.title}</h2>
                     <p className='text-amber-400'>${car.price}/day</p>
@@ -67,7 +67,7 @@ function Catalogue() {
     <div>
       <div className='mt-40'>
         <h3 className='text-md text-amber-300 font-medium uppercase'>Car Catalogue</h3>
-        <h1 className='text-4xl text-slate-400'>Explore the cars you might like</h1>
+        <h1 className='text-2xl md:text-4xl text-slate-400'>Explore the cars you might like</h1>
         <div className='flex flex-row flex-wrap gap-3 my-5 items-center'>
           <button onClick={() => (handleParams("type","hatchback"))} style={typeFilter === "hatchback" ? activeStyle : null } className='rounded-full font-medium px-5 py-2 text-slate-400 bg-amber-300 hover:bg-amber-400'>Hatchback</button>
           <button onClick={() => (handleParams("type","suv"))} style={typeFilter === "suv" ? activeStyle : null } className='rounded-full font-medium px-5 py-2 text-slate-400 bg-amber-300 hover:bg-amber-400'>SUV</button>
@@ -84,7 +84,7 @@ function Catalogue() {
       (<h1>Loading....</h1>) :
       (
       <div className='flex flex-col'>
-        <div className='flex flex-wrap justify-between items-center'>
+        <div className='flex flex-wrap gap-5 md:gap-0 justify-center md:justify-between items-center'>
             {carElements}
         </div>
         { visibleCars === 8 ? 

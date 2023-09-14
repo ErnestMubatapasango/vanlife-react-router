@@ -8,11 +8,11 @@ function Home() {
     }
 
   return (
-    <div className='flex  items-start justify-between pt-20 '>
-        <div className='space-y-5'>
-            <h1 className='text-[42px] leading-tight font-extrabold'>Find, Book, or <span className='text-amber-300'>Rent</span><br /> a car quickly and easily!<br /></h1>
+    <div className='flex flex-col md:flex-row gap-y-8 items-start  py-20 md:py-0 md:pt-10 '>
+        <div className='space-y-5 w-full md:w-1/2'>
+            <h1 className='text-[30px] xs:text-[35px] md:text-[30px] lg:text-[42px]  text leading-tight font-extrabold'>Find, Book, or <span className='text-amber-300'>Rent</span><br /> a car quickly and easily!<br /></h1>
 
-            <h3 className='font-light'>
+            <h3 className='font-light  text-[15px] xs:text-[17px]'>
                 Streamline your car rental experience with our effortless<br/> Booking Process.Our user-friendly platform 
                 allows you to compare, reserve, and manage rentals seamlessly.
             </h3>
@@ -24,8 +24,8 @@ function Home() {
             />
         </div>
 
-         <div className='bg-hero-bg h-screen bg-no-repeat  ml-40 -mt-20'>
-            <img src='hero.png' alt='hero'className='w-[65em] mt-20 -ml-20' /> 
+         <div className='md:bg-hero-bg md:h-screen bg-no-repeat  md:w-1/2 md:ml-20 md:-mt-20'>
+            <img src='hero.png' alt='hero'className=' w-full md:w-[80em] md:mt-20 md:-ml-20' /> 
         </div>
             
             
