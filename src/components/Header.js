@@ -58,7 +58,9 @@ function Header() {
               </NavLink>
               <NavLink 
               to='login' 
-              className="font-bold text-xl text-center  rounded-full hover:bg-amber-300 w-full" >
+              className="font-bold text-xl text-center  rounded-full hover:bg-amber-300 w-full" 
+              onClick={() => setMobileMenu(false)}
+              >
                 Login
               </NavLink>
             </nav>
