@@ -8,7 +8,10 @@ module.exports = {
     backgroundImage: {
       'pattern': "url('./pattern.png')",
       'hero-bg': "url('./assets/hero-bg.png')"
-    }
+    },
+    // screens: {
+    //   xs: "450px",
+    // },
   },
   plugins: [],
 }

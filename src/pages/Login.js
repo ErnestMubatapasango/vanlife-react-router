@@ -57,8 +57,8 @@ function Login() {
   // }
   
   return (
-    <div className='flex flex-col justify-center items-center pt-10 bg-amber-300 mx-60 rounded-3xl'>
-        <h1 className='text-3xl'>Sign into your account</h1>
+    <div className='flex flex-col justify-center items-center my-10 pt-10 bg-amber-300 sm:mx-40 xl:mx-60  rounded-3xl'>
+        <h1 className='text-xl md:text-3xl font-bold text-center'>Sign into your account</h1>
         {message && <h3 className='text-red-500 font-bold pt-2'>{message}</h3>}
         {error && <h3 className='text-red-500 font-bold pt-2'>{error}</h3>}
         {/* <form onSubmit={handleSubmit} className='flex flex-col justify-center gap-8 py-5'>
@@ -86,15 +86,15 @@ function Login() {
             type="email"
             placeholder='Email Address'
             name='email'
-            className='p-2 rounded-xl w-[300px] indent-2 outline-none text-slate-500'
+            className='p-2 rounded-xl w-[180px] xs:w-[250px] md:w-[300px] indent-2 outline-none text-slate-500'
           />
           <input 
             type="password"
             placeholder='Password'
             name='password'
-            className='p-2 rounded-xl w-[300px] indent-2 outline-none text-slate-500'
+            className='p-2 rounded-xl w-[180px] xs:w-[250px] md:w-[300px] indent-2 outline-none text-slate-500'
           />
-          <button className='bg-amber-200 p-2 rounded-2xl text-xl font-bold hover:bg-amber-400 text-slate-500'>Login</button>
+          <button className='bg-amber-200 p-2 rounded-2xl text-lg sm:text-xl font-bold hover:bg-amber-400 text-slate-500'>Login</button>
         </Form>
     </div>
   )
