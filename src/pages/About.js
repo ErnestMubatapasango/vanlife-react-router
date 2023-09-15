@@ -43,13 +43,13 @@ function About() {
   })
 
   return (
-    <div className='flex flex-col items-center mt-20'>
-      <h1 className='text-2xl md:text-3xl font-medium text-amber-300 mb-10 uppercase'>About us</h1>
+    <div className='flex flex-col items-center mt-20 md:mt-0'>
+      <h1 className='text-2xl md:text-3xl font-semibold text-amber-300 mb-10 uppercase'>About us</h1>
 
       <div className='flex flex-col-reverse md:flex-row  items-center gap-11'>
         <div className='w-full md:w-1/2 space-y-3'>
           <h2 className='font-bold text-slate-400 text-3xl'>Your Ultimate Car Rental Experience</h2>
-          <p className='text-center '>
+          <p className='text-center md:text-left '>
             Welcome to #CARLIFE, where your journey begins with unparalleled convenience 
             and exceptional service. We are more than just a car rental company; we're your 
             trusted partner in exploring the world on four wheels. At #CARLIFE, we're dedicated 
@@ -60,7 +60,7 @@ function About() {
         <img src='about.jpg' alt='' className='w-full md:w-1/2 rounded-3xl' />
       </div>
       
-      <div className='text-center mx-0 md:mx-60 my-20'>
+      <div className='text-center mx-0 md:mx-20 my-20'>
         <h2 className='text-2xl text-amber-300 font-semibold uppercase  pb-3'>Our Story</h2>
         <p>
           Founded with a passion for travel and a deep appreciation for the freedom a reliable vehicle provides, 
@@ -76,7 +76,7 @@ function About() {
         </div>
       </div>
 
-      <div className='text-center mx-0 md:mx-60 my-10'>
+      <div className='text-center mx-0 md:mx-20 my-10'>
         <h2 className='text-2xl text-amber-300 font-semibold uppercase  pb-3'>Our Team</h2>
         <p>
           Behind #CARLIFE is a team of dedicated professionals who are passionate about cars, travel, 
@@ -85,7 +85,7 @@ function About() {
         </p>
       </div>
 
-      <div className='text-center mx-0 md:mx-60 my-10'>
+      <div className='text-center mx-0 md:mx-20 my-10'>
         <h2 className='text-2xl text-amber-300 font-semibold uppercase  pb-3'>Our Commitment</h2>
         <p>
           Our commitment to you goes beyond just renting cars. We're dedicated to reducing our environmental 
@@ -94,7 +94,7 @@ function About() {
         </p>
       </div>
 
-      <div className='text-center mx-0 md:mx-60 my-10'>
+      <div className='text-center mx-0 md:mx-20 my-10'>
         <h2 className='text-2xl text-amber-300 font-semibold uppercase pb-3'>Join the #CARLIFE Community</h2>
         <p>
           Whether you're a frequent traveler or just planning your next adventure, we invite you to join the #CARLIFE 

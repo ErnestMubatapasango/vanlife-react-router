@@ -37,7 +37,7 @@ function Inventory() {
   }, []);
 
   return (
-    
+    <div className='md:pt-20'>
       <Form className='flex flex-row flex-wrap gap-5 md:gap-0 md:justify-around shadow-2xl bg-amber-300 rounded-3xl p-5'>
         <div className='flex flex-col gap-3 items-start justify-start'>
         <label className='font-medium text-slate-700  text-lg flex items-center' htmlFor='location'><ImLocation2 />Location:</label>
@@ -80,7 +80,7 @@ function Inventory() {
           Search
         </button>
       </Form>
- 
+      </div>
     
   )
 }
