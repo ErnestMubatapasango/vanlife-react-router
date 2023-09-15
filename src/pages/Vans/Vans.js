@@ -48,9 +48,9 @@ function Vans() {
     )
   }
   return (
-    <div className='space-y-5'>
+    <div className='space-y-5 pt-10'>
       <h2 className='text-4xl font-semibold'>Explore our vans options</h2>
-      <div className='flex gap-5 items-center'>
+      <div className='flex flex-wrap gap-5 items-center'>
         <button onClick={() => handleParams("type","hatchback")} className='bg-amber-300 px-3 py-2 rounded-full font-medium text-slate-800 hover:bg-slate-300'>Hatchback</button>
         <button onClick={() => handleParams("type","luxury")} className='bg-amber-300 px-3 py-2 rounded-full font-medium text-slate-800 hover:bg-slate-300'>Luxury</button>
         <button onClick={() => handleParams("type","suv")} className='bg-amber-300 px-3 py-2 rounded-full font-medium text-slate-800 hover:bg-slate-300'>SUV</button>
