@@ -16,7 +16,7 @@ function HostVans() {
     const hostVanElements = hostVans.map(hostVan => {
       return(
         <Link to={hostVan.id} className='flex flex-row gap-5 bg-amber-100 p-8 rounded-2xl cursor-pointer'>
-          <img className='w-80 h-[18rem] rounded-xl' src={hostVan.imageUrl} alt='hostVan' />
+          <img className='w-80 h-[18rem] rounded-xl object-contain' src={hostVan.imageUrl} alt='hostVan' />
           <div className='space-y-3'>
             <h2 className='text-2xl font-medium'>{hostVan.title}</h2>
             {/* <p className='text-lg italic leading-tight'>{hostVan.description}</p> */}

@@ -23,7 +23,7 @@ function HostVanDetail() {
                 <Link to=".." relative='path' className='text-xl text-slate-500 underline font-medium'> &larr; Back to all Vans</Link>
                 
                 <div className='flex flex-row gap-8 items-center'>
-                    <img className='w-80 h-[18rem] rounded-xl' src={hostVan.imageUrl} alt='hostVan' />
+                    <img className='w-80 h-[18rem] rounded-xl object-contain' src={hostVan.imageUrl} alt='hostVan' />
                     <div className='space-y-3'>
                         <p className='px-3 py-2 bg-gray-500 text-slate-300 text-center text-lg rounded-full font-semibold'>{hostVan.type}</p>
                         <h2 className='text-2xl font-medium'>{hostVan.title}</h2>
