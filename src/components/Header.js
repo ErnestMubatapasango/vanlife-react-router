@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import {CgMenuRightAlt} from 'react-icons/cg'
 import {MdOutlineClose} from 'react-icons/md'
 
 function Header() {
@@ -24,7 +23,7 @@ function Header() {
             <NavLink to='login' style={({isActive}) => isActive ? activeStyle : null } className='font-normal text-lg  hover:text-gray-500 hover:text-xl ease-in delay-75'>Login</NavLink>
         </nav>
         <div className='flex md:hidden cursor-pointer'>
-          <button onClick={() => setMobileMenu(!mobileMenu)} className={` ${mobileMenu ? 'text-amber-300': null} font-bold text-2xl`}>{mobileMenu ? <MdOutlineClose/> : <CgMenuRightAlt/>  }</button>
+          <button onClick={() => setMobileMenu(!mobileMenu)} className={` ${mobileMenu ? 'text-amber-300': null} font-bold text-2xl`}>{mobileMenu ? <MdOutlineClose/> : "Menu"  }</button>
         </div>
 
         { mobileMenu ? (
