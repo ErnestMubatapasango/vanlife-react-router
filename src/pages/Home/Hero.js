@@ -4,9 +4,25 @@ import { Link } from 'react-router-dom'
 
 function Home() {
 
-    function handleScroll(){
-        
-    }
+    const [scrolling, setScrolling] = React.useState(false)
+    // const [active, setActive] = React.useState("")
+    // const handleNavLink = (link) => {
+    //     setActive(link)
+    // }
+    // React.useEffect(() => {
+    //     function handleScroll(){
+    //         if(window.scrollY > 0){
+    //             setScrolling(true)
+    //         }
+    //         else{
+    //             setScrolling(false)
+    //         }
+            
+    //     }
+    //     window.addEventListener("scroll", handleScroll)
+    //     return () => window.removeEventListener("scroll", handleScroll)
+    // }, [])
+  
 
   return (
     <div className='flex flex-col-reverse md:flex-row gap-y-8 items-start py-20 md:py-0 md:pt-10'>
@@ -22,7 +38,6 @@ function Home() {
                 <CustomButton
                     title="Explore Cars"
                     containerStyles="bg-amber-300 mt-5 text-slate-500 rounded-full font-medium"
-                    handleClick={handleScroll}
                 />
             </Link>
           
