@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import {MdOutlineClose} from 'react-icons/md'
+//import {MdOutlineClose} from 'react-icons/md'
 
 function Header() {
 
