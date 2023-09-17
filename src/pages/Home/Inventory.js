@@ -1,9 +1,9 @@
 import React from 'react'
-import { Form,useSearchParams } from 'react-router-dom'
+import {Form} from 'react-router-dom'
 import {ImLocation2} from "react-icons/im"
-import {BsCalendar2Date, BsFillCarFrontFill} from "react-icons/bs"
+import {BsCalendar2Date} from "react-icons/bs"
 import {MdOutlineImageSearch} from "react-icons/md"
-import { getVans } from '../../api'
+
 
 
 function Inventory() {

@@ -3,9 +3,6 @@ import CustomButton from '../../components/CustomButton'
 import { getReviewsData } from '../../api'
 import {BsArrowLeftCircle, BsArrowRightCircle} from "react-icons/bs"
 import {FaQuoteLeft,FaQuoteRight} from "react-icons/fa"
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 function Reviews() {
 
@@ -25,14 +22,7 @@ function Reviews() {
         loadReviews()
     },[])
     
-    const settings = {
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        adaptiveHeight: true,
-        beforeChange: (currentSlide, next) => setCurrentSlide(next)
-      };
-
+ 
     const reviewElements = reviews.slice(0, currentSlide).map(review => {
         return(
             
