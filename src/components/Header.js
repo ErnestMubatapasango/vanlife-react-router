@@ -23,7 +23,7 @@ function Header() {
             <NavLink to='login' style={({isActive}) => isActive ? activeStyle : null } className='font-normal text-lg  hover:text-gray-500 hover:text-xl ease-in delay-75'>Login</NavLink>
         </nav>
         <div className='flex md:hidden cursor-pointer'>
-          <button onClick={() => setMobileMenu(!mobileMenu)} className={` ${mobileMenu ? 'text-amber-300': null} font-bold text-2xl`}>{mobileMenu ? <MdOutlineClose/> : "Menu"  }</button>
+          <button onClick={() => setMobileMenu(!mobileMenu)} className={` ${mobileMenu ? 'text-amber-300': null} font-bold text-2xl`}>{mobileMenu ? "Close" : "Menu"  }</button>
         </div>
 
         { mobileMenu ? (
