@@ -9,7 +9,7 @@ function Header() {
 
     const activeStyle = {
     fontWeight: 'bold',
-    color: '#FFD54F',
+    color: '#',
     fontSize: '20px',
   }
 
