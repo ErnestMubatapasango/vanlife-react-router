@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -16,11 +16,11 @@ function Footer() {
 
             <div className='space-y-2'>
                 <h1 className='text-xl font-bold'>Our Company</h1>
-                <ul className='space-y-1'>
-                    <li className='text-slate-400'>Home</li>
-                    <li className='text-slate-400'>About</li>
-                    <li className='text-slate-400'>Cars</li>
-                    <li className='text-slate-400'>Car Catalogue</li>
+                <ul className='flex flex-col gap-2'>
+                    <NavLink to='home' className='text-slate-400'>Home</NavLink>
+                    <NavLink to='about' className='text-slate-400'>About</NavLink>
+                    <NavLink to='vans' className='text-slate-400'>Cars</NavLink>
+                    <NavLink to='host' className='text-slate-400'>Host</NavLink>
                 </ul>
             </div>
 

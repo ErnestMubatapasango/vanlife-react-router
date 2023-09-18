@@ -68,7 +68,7 @@ function Reviews() {
         <p className='text-white text-lg'>Get the latest updates on the #CARLIFE rental service</p>
 
         <div className='md:space-x-2 space-y-5'>
-            <input className='indent-2 w-full lg:w-80 p-2 rounded-full bg-white text-center text-amber-200' type='email' placeholder='Enter your email here'  />
+            <input className='indent-2 w-full lg:w-80 p-2 rounded-full bg-white text-center text-slate-400 outline-none' type='email' placeholder='Enter your email here'  />
             <button className='bg-white border-2 border-slate-400 p-2 rounded-full w-full lg:w-[10em]  font-medium text-slate-400'>Subscribe</button>
         </div>
     </div>

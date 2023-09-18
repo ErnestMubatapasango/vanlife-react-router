@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from './components/Layout'
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import { Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Vans, {loader as vanLoader} from './pages/Vans/Vans'
 import VanDetail, {loader as VanDetailLoader} from './pages/Vans/VanDetail'
 import About from './pages/About'
@@ -52,9 +52,9 @@ function App() {
 
         <Route 
           path='vans/:id' 
-          loader={hostVanDetailLoader} 
+          loader={hostVanDetailLoader}
+          element={<HostVanDetail />}
           errorElement={<Error />} 
-          element={<HostVanDetail />} 
         >
           <Route 
             index 
@@ -84,6 +84,7 @@ function App() {
 
       </Route>
       <Route path='*' element={<NotFound />} />
+     
     </Route>
   ))
   return (
