@@ -40,11 +40,11 @@ function Catalogue() {
     const carElements = displayedCars.slice(0, visibleCars).map(car => {
         return(
             <Link key={car.id}>
-                <div className='w-[13em] h-[20em] flex flex-col gap-2 items-start shadow-2xl px-2 py-4 rounded-2xl' >
-                    <img src={car.imageUrl} alt='rental cars' className='rounded-2xl w-[14rem] h-[10rem] object-contain' />
-                    <h2 className='font-medium text-lg text-black'>{car.title}</h2>
+                <div className='w-[9.3rem] sm:w-[10em] md:w-[13rem] h-[15rem] md:h-[20em] flex flex-col gap-2 items-start shadow-2xl px-2 py-4 rounded-2xl' >
+                    <img src={car.imageUrl} alt='rental cars' className='rounded-2xl w-[13rem] h-[10rem] object-contain' />
+                    <h2 className='font-medium text-sm md:text-lg text-black'>{car.title}</h2>
                     <p className='text-amber-400'>${car.price}/day</p>
-                    <button className='bg-amber-300 text-black w-full font-bold p-2 rounded-xl'>Rent Now</button>
+                    <button className='bg-amber-300 text-black w-full text-sm md:text-base font-bold p-2 rounded-xl'>Rent Now</button>
                 </div>
             </Link>
 

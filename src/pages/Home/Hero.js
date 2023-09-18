@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Home() {
 
-    const [scrolling, setScrolling] = React.useState(false)
+    //const [scrolling, setScrolling] = React.useState(false)
     // const [active, setActive] = React.useState("")
     // const handleNavLink = (link) => {
     //     setActive(link)
@@ -25,7 +25,7 @@ function Home() {
   
 
   return (
-    <div className='flex flex-col-reverse md:flex-row gap-y-8 items-start py-20 md:py-0 md:pt-10'>
+    <div className='flex flex-col-reverse md:flex-row gap-y-8 items-start py-10 md:py-0 md:pt-10'>
         <div className='space-y-6 w-full md:w-1/2'>
             <h1 className='text-[30px] xs:text-[35px] md:text-[30px] lg:text-[42px]  text leading-tight font-extrabold'>Find, Book, or <span className='text-amber-300'>Rent</span><br /> a car quickly and easily!<br /></h1>
 
@@ -37,7 +37,7 @@ function Home() {
             <Link to='vans'>
                 <CustomButton
                     title="Explore Cars"
-                    containerStyles="bg-amber-300 mt-5 text-slate-500 rounded-full font-medium"
+                    containerStyles="bg-amber-300 my-5 text-slate-500 rounded-full font-medium"
                 />
             </Link>
           

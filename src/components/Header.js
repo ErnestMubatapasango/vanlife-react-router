@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
-//import {MdOutlineClose} from 'react-icons/md'
-
+import {MdOutlineClose} from 'react-icons/md'
+import {BiMenuAltRight} from  'react-icons/bi'
 function Header() {
 
   const [mobileMenu, setMobileMenu] = React.useState(false)
@@ -23,7 +23,7 @@ function Header() {
             <NavLink to='login' style={({isActive}) => isActive ? activeStyle : null } className='font-normal text-lg  hover:text-gray-500 hover:text-xl ease-in delay-75'>Login</NavLink>
         </nav>
         <div className='flex md:hidden cursor-pointer'>
-          <button onClick={() => setMobileMenu(!mobileMenu)} className={` ${mobileMenu ? 'text-amber-300': null} font-bold text-2xl`}>{mobileMenu ? "Close" : "Menu"  }</button>
+          <button onClick={() => setMobileMenu(!mobileMenu)} className={` ${mobileMenu ? 'text-amber-300': null} font-bold text-2xl`}>{mobileMenu ? <MdOutlineClose/> : <BiMenuAltRight />   }</button>
         </div>
 
         { mobileMenu ? (
