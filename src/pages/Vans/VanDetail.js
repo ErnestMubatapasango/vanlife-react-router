@@ -55,7 +55,7 @@ function VanDetail() {
       <Link 
         to={`..?${type}`}
         relative='path'
-        className='text-xl underline text-slate-400 uppercase'
+        className='text-xl underline text-slate-400 uppercase' 
       >
          &larr; Back to <span className={`${filterValue === 'minibus'? '': 'font-bold' }`}>{filterValue}</span>{filterValue === 'minibus'? "es" : " vehicles"}
       </Link>
