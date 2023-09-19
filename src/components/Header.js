@@ -18,7 +18,7 @@ function Header() {
 
   return (
     <div className='flex flex-row justify-between mt-10 sticky z-50 top-5 bg-white backdrop-filter backdrop-blur-md bg-opacity-50 rounded-xl w-auto py-5 px-2'>
-        <Link  to='/' className=' text-xl md:text-2xl lg:text-3xl font-extrabold'><span className='text-amber-300'>#CAR</span>LIFE</Link>
+        <NavLink onClick={handleNavLinkReset}  to='/' className=' text-xl md:text-2xl lg:text-3xl font-extrabold'><span className='text-amber-300'>#CAR</span>LIFE</NavLink>
         <nav className='md:flex gap-11 hidden '>
             <NavLink onClick={handleNavLinkReset} to='.' style={({isActive}) => isActive ? activeStyle : null } className='font-normal text-lg  hover:text-gray-500 hover:text-xl ease-in delay-75'>Home</NavLink>
             <NavLink onClick={handleNavLinkReset} to='host' style={({isActive}) => isActive ? activeStyle : null } className='font-normal text-lg  hover:text-gray-500 hover:text-xl ease-in delay-75'>Host</NavLink>
