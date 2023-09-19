@@ -57,7 +57,7 @@ function VanDetail() {
         relative='path'
         className='text-xl underline text-slate-400 uppercase'
       >
-         &larr; Back to {filterValue}{filterValue === 'minibus'? "es" : " cars"}
+         &larr; Back to <span className='font-bold'>{filterValue}</span>{filterValue === 'minibus'? "es" : " vehicles"}
       </Link>
 
       <React.Suspense fallback={
